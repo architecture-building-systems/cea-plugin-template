@@ -1,5 +1,9 @@
 Demand Summary:
   - Total System Cooling Demand:
+      expected-parameters:
+        # no parameters defined for this plot
+        # map parameter-name => config fully qualified parameter name
+        # e.g.: scenario-name: "general:scenario"
       data:
         location: demand_summary
         index: Name
@@ -7,5 +11,6 @@ Demand Summary:
           - QC_sys_MWhyr
       layout:
         kind: bar
+        title: Total System Cooling Demand
         yTitle: "Energy Demand [MWh/yr]"
         xTitle: Building Name
