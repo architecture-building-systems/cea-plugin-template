@@ -5,6 +5,6 @@ Demand Summary:
     description: Creates a simple summary of the demand totals from the cea demand script.
     interfaces: [cli, dashboard]
     module: cea_plugin_template.demand_summary
-    parameters: ["general:scenario", "general:plugins"]
+    parameters: ["general:scenario"]
     input-files:
       - [get_total_demand]
