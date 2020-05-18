@@ -20,7 +20,7 @@ __email__ = "cea@arch.ethz.ch"
 __status__ = "Production"
 
 
-def summarize(total_demand_df):
+def summarize(total_demand_df, fudge_factor):
     """
     Return only the following fields from the Total_demand.csv file:
     - Name (Unique building ID)
@@ -28,7 +28,10 @@ def summarize(total_demand_df):
     - QC_sys_MWhyr (Total system cooling demand)
     - QH_sys_MWhyr (Total building heating demand)
     """
-    return total_demand_df[["Name", "GFA_m2", "QC_sys_MWhyr", "QH_sys_MWhyr"]]
+    result_df = total_demand_df[["Name", "GFA_m2", "QC_sys_MWhyr", "QH_sys_MWhyr"]].copy()
+    result_df["QC_sys_MWhyr"] *= fudge_factor
+    result_df["QH_sys_MWhyr"] *= fudge_factor
+    return result_df
 
 
 def main(config):
@@ -41,7 +44,7 @@ def main(config):
     :return: None
     """
     locator = cea.inputlocator.InputLocator(config.scenario, config.plugins)
-    summary_df = summarize(locator.get_total_demand.read())
+    summary_df = summarize(locator.get_total_demand.read(), config.demand_summary.fudge_factor)
     locator.demand_summary.write(summary_df)
 
 
