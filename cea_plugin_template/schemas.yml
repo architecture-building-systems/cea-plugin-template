@@ -20,9 +20,11 @@ demand_summary:
         type: float
         unit: '[MWh/yr]'
         values: '{0.0...n}'
+        plot-color: blue
       QH_sys_MWhyr:
         description: Total building heating demand
         type: float
         unit: '[MWh/yr]'
         values: '{0.0...n}'
+        plot-color: red
   used_by: []
