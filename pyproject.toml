@@ -32,3 +32,6 @@ include-package-data = true
 [tool.setuptools.packages.find]
 where = ["."]
 exclude = ["tests*", "docs*"]  # Exclude test/doc packages if they exist
+
+[tool.setuptools.package-data]
+"*" = ["*.yml", "*.yaml", "*.config"]
