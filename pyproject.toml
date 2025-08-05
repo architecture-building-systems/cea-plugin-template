@@ -1,0 +1,34 @@
+[project]
+name = "cea_plugin_template"
+version = "1.0.0"
+description = "A template plugin for the City Energy Analyst"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Architecture and Building Systems", email = "cea@arch.ethz.ch"}
+]
+maintainers = [
+    { name = "Reynold Mok", email = "reynold.mok@arch.ethz.ch" }
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/architecture-building-systems/cea-plugin-template"
+Repository = "https://github.com/architecture-building-systems/cea-plugin-template"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = ["tests*", "docs*"]  # Exclude test/doc packages if they exist
