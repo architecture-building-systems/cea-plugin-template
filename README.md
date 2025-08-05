@@ -1,6 +1,13 @@
 # cea-plugin-template
 A template repository for create CEA plugins
 
+## Usage
+To create a new plugin based on this template, follow the steps below:
+- Fork this template repository
+- Rename the `cea_plugin_template` directory to the name of your plugin (e.g. `cea_demand_summary`)
+- Update the `name` field in pyproject.toml and any other fields that you want to change
+
+## Installation
 To install, clone this repo to a desired path (you would need to have `git` installed to run this command. Alternatively you can also run this command in the CEA console, which
 comes with `git` pre-installed):
 
